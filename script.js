@@ -18,6 +18,9 @@ async function fetchWeather(cityName) {
 
     // Hide the welcome div when the user searches for a city
     document.getElementById('welcome').classList.add('hidden');
+
+    // Remove the 'hidden' class to display the activities section
+    document.getElementById('activities').classList.remove('hidden');
   } catch (error) {
     console.error("Error fetching weather data:", error);
   }
@@ -30,25 +33,24 @@ function displayWeather(data) {
   document.getElementById('description').innerText = data.weather[0].description;
   document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity}%`;
   document.getElementById('wind-speed').innerText = `Wind Speed: ${data.wind.speed} m/s`;
+  document.getElementById('activity-suggestions').classList.remove('hidden');
 
   // Remove the 'hidden' class to display the weather information
   document.getElementById('weather-info').classList.remove('hidden');
 
-  // Update the background color and UI elements based on the temperature
   const temperature = Math.round(data.main.temp);
   const bodyElement = document.body;
-  bodyElement.classList.remove('hot', 'moderate', 'cold', 'very-hot', 'cool', 'very-cold');
 
   if (temperature > 30) {
-    bodyElement.classList.add('very-hot');
+    bodyElement.style.background = 'linear-gradient(to bottom, #e53935, #d32f2f)';
   } else if (temperature > 20) {
-    bodyElement.classList.add('hot');
+    bodyElement.style.background = 'linear-gradient(to bottom, #FFA726, #FF7E41)';
   } else if (temperature > 10) {
-    bodyElement.classList.add('moderate');
+    bodyElement.style.background = 'linear-gradient(to bottom, #F0DB4F, #F2CA52)';
   } else if (temperature > 0) {
-    bodyElement.classList.add('cool');
+    bodyElement.style.background = 'linear-gradient(to bottom, #4a90e2, #6AB1F7)';
   } else {
-    bodyElement.classList.add('very-cold');
+    bodyElement.style.background = 'linear-gradient(to bottom, #00ACC1, #00897B)';
   }
 }
 
@@ -58,6 +60,7 @@ function suggestActivities(data) {
 
   const temperature = data.main.temp;
   const suggestions = [];
+
 
   if (temperature >= 20) {
       suggestions.push('Visit a park', 'Go for a bike ride', 'Have a picnic', 'Visit a local beach', 'Go to a lake',
