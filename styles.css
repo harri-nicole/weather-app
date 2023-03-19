@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+  }
+  
+  #main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #6AB1F7;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  /* TEMPERATURE-BASED STYLES */
+body.very-hot {
+    background: linear-gradient(to bottom, #FFA726, #FF7E41);
+  }
+  
+  body.hot {
+    background: linear-gradient(to bottom, #F0DB4F, #F2CA52);
+  }
+  
+  body.warm {
+    background: linear-gradient(to bottom, #4a90e2, #6AB1F7);
+  }
+  
+  body.cool {
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+  }
+  
+  body.cold {
+    background: linear-gradient(to bottom, #00c9ff, #92fe9d);
+  }
+  
+  body.very-cold {
+    background: linear-gradient(to bottom, #70e1f5, #ffd194);
+  }
+  
+  header.very-hot,
+  header.warm,
+  header.cool,
+  header.very-cold {
+    background-color: transparent;
+  }
+  
+  #search-btn.very-hot,
+  #search-btn.warm,
+  #search-btn.cool,
+  #search-btn.very-cold {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+  
+  #search-btn.very-hot:hover,
+  #search-btn.warm:hover,
+  #search-btn.cool:hover,
+  #search-btn.very-cold:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  #welcome h2.very-hot,
+  #welcome h2.warm,
+  #welcome h2.cool,
+  #welcome h2.very-cold {
+    color: white;
+  }
+  
+  #welcome p.very-hot,
+  #welcome p.warm,
+  #welcome p.cool,
+  #welcome p.very-cold {
+    color: white;
+  }
+  
