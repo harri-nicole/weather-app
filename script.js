@@ -41,6 +41,7 @@ function displayWeather(data) {
   const temperature = Math.round(data.main.temp);
   const bodyElement = document.body;
 
+  // Change background based on temperature
   if (temperature > 30) {
     bodyElement.style.background = 'linear-gradient(to bottom, #e53935, #d32f2f)';
   } else if (temperature > 20) {
